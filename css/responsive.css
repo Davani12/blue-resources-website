@@ -1,0 +1,461 @@
+/* 
+* Blue Resources Co., Ltd. Website Responsive Styles
+* Author: blue_resources_website
+* Version: 2.1
+*/
+
+/* =====================================
+   Responsive Breakpoints
+   =====================================
+   Extra small : 0-575px
+   Small       : 576-767px
+   Medium      : 768-991px
+   Large       : 992-1199px
+   Extra large : 1200px+
+===================================== */
+
+/* =====================================
+   Mobile Menu Toggle
+===================================== */
+@media (max-width: 991px) {
+    .mobile-menu-toggle {
+        display: block;
+        z-index: 10; /* Ensure it's above the nav when open */
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        gap: 0;
+        padding: 100px 30px 30px;
+        transition: right 0.3s ease;
+        z-index: 9;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    .nav-list.active {
+        right: 0;
+    }
+
+    body.menu-open {
+        overflow: hidden; /* Prevent scrolling when menu is open */
+    }
+
+    .nav-item {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-item a {
+        padding: 12px 0;
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        position: relative;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0 0 0 15px;
+    }
+
+    .has-dropdown.active .dropdown {
+        display: block;
+        max-height: 500px; /* Large enough to fit all content */
+    }
+
+    .has-dropdown > a::after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+    }
+
+    .has-dropdown.active > a::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
+
+/* =====================================
+   Extra Small Devices (less than 576px)
+===================================== */
+@media (max-width: 575px) {
+    :root {
+        --h1-size: 28px;
+        --h2-size: 24px;
+        --h3-size: 18px;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .row {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .col {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Grid for small devices */
+    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+    .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Header */
+    .header-top-bar {
+        display: none;
+    }
+
+    .header-inner {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .logo {
+        max-width: 140px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .hero-content {
+        padding: var(--spacing-md) 0;
+    }
+
+    .hero h1 {
+        font-size: var(--h1-size);
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .footer-column:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* =====================================
+   Small Devices (576px - 767px)
+===================================== */
+@media (min-width: 576px) and (max-width: 767px) {
+    :root {
+        --h1-size: 32px;
+        --h2-size: 26px;
+        --h3-size: 20px;
+    }
+
+    .container {
+        max-width: 540px;
+    }
+
+    /* Grid for small devices */
+    .col-sm-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+    .col-sm-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+    .col-sm-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-sm-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+    .col-sm-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+    .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-sm-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+    .col-sm-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+    .col-sm-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-sm-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+    .col-sm-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+    .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+/* =====================================
+   Medium Devices (768px - 991px)
+===================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+
+    /* Grid for medium devices */
+    .col-md-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+    .col-md-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+    .col-md-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-md-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+    .col-md-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+    .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-md-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+    .col-md-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+    .col-md-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-md-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+    .col-md-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+    .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================================
+   Large Devices (992px - 1199px)
+===================================== */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+
+    /* Grid for large devices */
+    .col-lg-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+    .col-lg-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+    .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+    .col-lg-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+    .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-lg-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+    .col-lg-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+    .col-lg-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-lg-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+    .col-lg-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+    .col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* =====================================
+   Extra Large Devices (1200px and up)
+===================================== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: var(--container-width);
+    }
+
+    /* Grid for extra large devices */
+    .col-xl-1 { flex: 0 0 8.333333%; max-width: 8.333333%; }
+    .col-xl-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
+    .col-xl-3 { flex: 0 0 25%; max-width: 25%; }
+    .col-xl-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+    .col-xl-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
+    .col-xl-6 { flex: 0 0 50%; max-width: 50%; }
+    .col-xl-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
+    .col-xl-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+    .col-xl-9 { flex: 0 0 75%; max-width: 75%; }
+    .col-xl-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+    .col-xl-11 { flex: 0 0 91.666667%; max-width: 91.666667%; }
+    .col-xl-12 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* =====================================
+   Glassy Effects Fallbacks
+===================================== */
+@supports not ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+    .site-header,
+    .dropdown,
+    .service-card,
+    .case-study-card,
+    .newsletter-form input,
+    .cta-button,
+    .glass-card {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .site-header {
+        background-color: var(--white);
+    }
+
+    @media (max-width: 991px) {
+        .nav-list {
+            background-color: var(--white);
+        }
+    }
+}
+
+/* =====================================
+   Print Styles
+===================================== */
+@media print {
+    .site-header,
+    .site-footer,
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .service-card,
+    .case-study-card,
+    .glass-card {
+        break-inside: avoid;
+        border: 1px solid #ddd;
+        box-shadow: none;
+        background: white;
+    }
+}
+
+/* =====================================
+   Animation Disabling for Users with Reduced Motion
+===================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =====================================
+   High Contrast Mode
+===================================== */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-blue: #0000ff;
+        --primary-blue-dark: #000099;
+        --secondary-gold: #ffcc00;
+        --neon-shadow-blue: none;
+        --neon-shadow-gold: none;
+        --glass-blur: none;
+    }
+
+    .service-card,
+    .case-study-card,
+    .glass-card,
+    .site-header,
+    .dropdown {
+        background-color: white;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: 2px solid black;
+    }
+
+    .cta-button {
+        background-color: var(--primary-blue);
+        color: white;
+        border: 2px solid black;
+    }
+}
+
+/* ==================== 
+   Blog Responsive Styles
+   ==================== */
+
+@media (max-width: 992px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .blog-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
+    }
+    
+    .subscribe-form input {
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+    
+    .subscribe-form .btn-primary {
+        border-radius: 4px;
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-image {
+        height: 180px;
+    }
+    
+    .blog-content {
+        padding: 1rem;
+    }
+    
+    .blog-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .blog-excerpt {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+} 

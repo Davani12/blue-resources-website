@@ -1,0 +1,17 @@
+Classm8 Logo Description:
+
+The Classm8 logo is a modern, clean design featuring:
+- The text "Classm8" in a bold, blue font (color: #3B82F6)
+- A graduation cap icon to the right of the text
+- A white background with subtle rounded corners
+
+The logo represents the educational nature of the platform while maintaining a modern, tech-forward appearance that appeals to both students and educators.
+
+To create this logo:
+1. Use a design tool like Figma, Adobe Illustrator, or Canva
+2. Create a rectangle with rounded corners (8px radius) with white fill
+3. Add the text "Classm8" in Arial or a similar sans-serif font, bold, size 28px, color #3B82F6
+4. Add a graduation cap icon in the same blue color
+5. Export as PNG with transparent background at 200x60px resolution
+
+Save the file as "classm8-logo.png" in the public/assets/images directory. 
