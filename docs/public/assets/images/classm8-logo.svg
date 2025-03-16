@@ -1,0 +1,15 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Rectangle -->
+  <rect width="200" height="60" rx="8" fill="#FFFFFF"/>
+  
+  <!-- Text "Classm8" -->
+  <text x="10" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="28" fill="#3B82F6">
+    Classm8
+  </text>
+  
+  <!-- Graduation Cap Icon -->
+  <path d="M170 15L150 25L170 35L190 25L170 15Z" fill="#3B82F6"/>
+  <path d="M155 30V38C155 38 162.5 42 170 42C177.5 42 185 38 185 38V30L170 35L155 30Z" fill="#3B82F6"/>
+  <rect x="168" y="42" width="4" height="8" fill="#3B82F6"/>
+  <rect x="166" y="50" width="8" height="2" fill="#3B82F6"/>
+</svg> 
