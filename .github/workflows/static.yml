@@ -2,7 +2,7 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "gh-pages"]
   workflow_dispatch:
 
 permissions:
@@ -23,14 +23,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Create .nojekyll file
+        run: touch .nojekyll
+        
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
           enablement: true
+          
+      - name: Copy docs to root (if necessary)
+        run: |
+          if [ -d "docs" ]; then
+            cp -a docs/. .
+          fi
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 
